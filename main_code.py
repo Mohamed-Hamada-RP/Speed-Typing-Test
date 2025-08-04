@@ -45,6 +45,9 @@ def wpm_test(stdscr):
         if "".join(current_text) == target_text:
             stdscr.nodelay(False )
             break
+        display_text(stdscr, target_text, current_text, wpm)
+        stdscr.move(0, len(current_text))  # Keep the cursor at the end
+        stdscr.refresh()
         try:
             key =stdscr.getkey()
         except:
